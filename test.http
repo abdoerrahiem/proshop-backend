@@ -1,0 +1,117 @@
+// Products
+### Get products
+GET http://localhost:5000/api/products
+
+### Get product
+GET http://localhost:5000/api/products/5f82e1fabe6dee10842408f0
+
+### Delete product
+DELETE http://localhost:5000/api/products/5f903d3c27818319401887e7
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmOTAzZDNjMjc4MTgzMTk0MDE4ODdlNCIsImlhdCI6MTYwMzUzMzg1MiwiZXhwIjoxNjA2MTI1ODUyfQ.-BaFJJdaGGvmMFSrO3ue0BCBJqRILzOA71zHb842uOA
+
+### Create product
+POST http://localhost:5000/api/products
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmOTQwMGE0MWYzYjM2MTA4MGM2YTI1MyIsImlhdCI6MTYwMzUzNTc0NCwiZXhwIjoxNjA2MTI3NzQ0fQ._2Kau6HXqS-H3WPX4QgoIeawnrw-1gCIJYw0WXcxhoA
+
+### Update product
+PUT http://localhost:5000/api/products/5f94038f81e89014a8376d35
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmOTQwMGE0MWYzYjM2MTA4MGM2YTI1MyIsImlhdCI6MTYwMzUzNTc0NCwiZXhwIjoxNjA2MTI3NzQ0fQ._2Kau6HXqS-H3WPX4QgoIeawnrw-1gCIJYw0WXcxhoA
+
+{
+    "name": "Test Product",
+    "description": "Test description",
+    "price": 10000,
+    "category": "electronics",
+    "countInStock": 10,
+    "image": "/images/sample.jpg",
+    "brand": "Test brand"
+}
+
+### Update photo product
+
+### Create product review
+POST http://localhost:5000/api/products/5f9400a41f3b361080c6a256/reviews
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmOTQwMGE0MWYzYjM2MTA4MGM2YTI1NCIsImlhdCI6MTYwMzc5NzY4NSwiZXhwIjoxNjA2Mzg5Njg1fQ.aOUmwMLoz_KBPWOAJoxM3i5QjBhxt_U_Ph8wE48OlXY
+
+{
+    "rating": 5,
+    "comment": "Headphone yang sangat bagus dan berkualitas."
+}
+
+### Get top products
+GET http://localhost:5000/api/products/top
+
+// Users
+### Login user
+POST http://localhost:5000/api/users/login
+Content-Type: application/json
+
+{
+    "email": "johndoe@gmail.com",
+    "password": "johndoe"
+}
+
+### Register user
+POST http://localhost:5000/api/users
+Content-Type: application/json
+
+{
+    "name": "remove",
+    "email": "remove@gmail.com",
+    "password": "remove"
+}
+
+### Get current (logged in) user
+GET http://localhost:5000/api/users/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmODJlMWZhYmU2ZGVlMTA4NDI0MDhlZSIsImlhdCI6MTYwMjkwNDQzOSwiZXhwIjoxNjA1NDk2NDM5fQ.6guFvfORVXUe8e6zWou3O7ayrsqUNquru-nLCbZz32U
+
+### Update current user
+PUT http://localhost:5000/api/users/profile
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmODJlMWZhYmU2ZGVlMTA4NDI0MDhlZSIsImlhdCI6MTYwMjc2OTE2MiwiZXhwIjoxNjA1MzYxMTYyfQ.jcpJ0njVja1WA7JIzBheMbE4HzwaphbEMl-9zHZ5Nf4
+
+{
+    "name": "John Doe",
+    "email": "johndoe@gmail.com",
+    "password": "johndoe"
+}
+
+### Get all users
+GET http://localhost:5000/api/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmOTAzZDNjMjc4MTgzMTk0MDE4ODdlNCIsImlhdCI6MTYwMzI5MjQ4NiwiZXhwIjoxNjA1ODg0NDg2fQ.yIy13T82rnWXQshexijq3EpMB96j19cRfVXvCjgMTlI
+
+### Delete user
+DELETE http://localhost:5000/api/users/5f9037ccede4ec0550b02461
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmODJlMWZhYmU2ZGVlMTA4NDI0MDhlZCIsImlhdCI6MTYwMzI4MjkxMSwiZXhwIjoxNjA1ODc0OTExfQ.zKrV5HiCpIgafG3lNNsMPu6d05GOR3UU0RIKtLAY0Zk
+
+### Get user
+GET http://localhost:5000/api/users/5f903d3c27818319401887e5
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmOTAzZDNjMjc4MTgzMTk0MDE4ODdlNCIsImlhdCI6MTYwMzI5MjU0MSwiZXhwIjoxNjA1ODg0NTQxfQ.ASvf8ZtruMwWjNP9bHR767Xncgttnc6HKKXesw_dvac
+
+### Update user
+PUT http://localhost:5000/api/users/5f903d3c27818319401887e5
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmOTAzZDNjMjc4MTgzMTk0MDE4ODdlNCIsImlhdCI6MTYwMzI5MjU0MSwiZXhwIjoxNjA1ODg0NTQxfQ.ASvf8ZtruMwWjNP9bHR767Xncgttnc6HKKXesw_dvac
+
+{
+    "name": "John Doe II"
+}
+
+// Orders
+### Create order
+
+### Get order
+GET http://localhost:5000/api/orders/5f8c0dcdfea083160c52b4a8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmODJlMWZhYmU2ZGVlMTA4NDI0MDhlZSIsImlhdCI6MTYwMzAxNDY5NSwiZXhwIjoxNjA1NjA2Njk1fQ.AuRokwO3I1VPmmnB6Epo4xT3pQjfvrGbEHSXLM4hTiY
+
+### Update order to pay
+
+### Get current user's orders
+GET http://localhost:5000/api/orders/myorders
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmODJlMWZhYmU2ZGVlMTA4NDI0MDhlZCIsImlhdCI6MTYwMzIwMTk3NywiZXhwIjoxNjA1NzkzOTc3fQ.d1fhjSrWxLvYyhmmHrF9eFcwYIZcEeqWElAQ8VmfsXo
+
+### Get orders
+GET http://localhost:5000/api/orders
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmOTQwMGE0MWYzYjM2MTA4MGM2YTI1MyIsImlhdCI6MTYwMzUzNTc0NCwiZXhwIjoxNjA2MTI3NzQ0fQ._2Kau6HXqS-H3WPX4QgoIeawnrw-1gCIJYw0WXcxhoA
